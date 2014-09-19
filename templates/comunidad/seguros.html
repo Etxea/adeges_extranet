@@ -1,0 +1,34 @@
+{% extends "layout.html" %}
+
+{% block title %} Comunidad - Seguros {%endblock%}
+
+
+{% block content %}
+
+
+<table class="table">
+    <thead>
+        <th>ID</th>
+        <th>Nombre</th>
+        <th>Direccion</th>
+        <th>email</th>
+        <th>Telefono</th>
+        <th>emergencias</th>
+        <th>comentario</th>
+        <th>fecha</th>
+        <th>borrado</th>
+    </thead>
+<tr>
+    <td>{{seguro.id}}</td>
+    <td>{{seguro.nombre}}</td>
+    <td>{{seguro.direccion}}</td>
+    <td>{{seguro.email}}</td>
+    <td>{{seguro.telefono}}</td>
+    <td>{{seguro.emergencias}}</td>
+    <td>{{seguro.comentarios}}</td>
+    <td>{{seguro.timestamp}}</td>
+    <td>{{seguro.borrado}}</td>
+</tr>
+
+</table>
+{%endblock%}

@@ -1,0 +1,127 @@
+{% extends "layout.html" %}
+
+{% block title %} Comunidad {%endblock%}
+
+
+{% block content %}
+
+
+            <div class="row">
+                <div class="col-lg-12">
+                    <h1>Comunidad <small>Datos Generales</small></h1>
+                    
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-3">
+                    <div class="panel panel-primary">
+                        <div class="panel-heading">
+                            <h3 class="panel-title"><i class="fa fa-clock-o"></i> Datos Generales</h3>
+                        </div>
+                        <div class="panel-body">
+                            <table>
+                                <tr>
+                                    <td>ID</td><td>{{ comunidad.id }}</td>
+                                </tr>
+                                <tr>
+                                    <td>Código</td><td>{{ comunidad.codigo }}</td>
+                                </tr>
+                                <tr>
+                                    <td>Nombre</td><td>{{ comunidad.nombrecp }}</td>
+                                </tr>
+                                <tr>
+                                    <td>Vía</td><td>{{ comunidad.via }}</td>
+                                </tr>
+                                <tr>
+                                    <td>Nombre Vía</td><td>{{ comunidad.nombrevia }}</td>
+                                </tr>
+                                <tr>
+                                    <td>Numero</td><td>{{ comunidad.numero }}</td>
+                                </tr>
+                                <tr>
+                                    <td>CP</td><td>{{ comunidad.cp }}</td>
+                                </tr>
+                                <tr>
+                                    <td>Municipio</td><td>{{ comunidad.municipio }}</td>
+                                </tr>
+                                <tr>
+                                    <td>provincia</td><td>{{ comunidad.provincia }}</td>
+                                </tr>
+                                <tr>
+                                    <td>usuario</td><td>{{ comunidad.usuario }}</td>
+                                </tr>
+                                <tr>
+                                    <td>pass</td><td>{{ comunidad.pass }}</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-9">
+                    <div class="panel panel-primary">
+                        <div class="panel-heading">
+                            <h3 class="panel-title"><i class="fa fa-bar-chart-o"></i> Propietarios</h3>
+                        </div>
+                        <div class="panel-body">
+                            
+                            <div id="propietarios"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+
+{% endblock %}
+
+
+{% block extra_scripts %}
+<script type="text/javascript">
+        jQuery(function ($) {
+            $("#propietarios").shieldGrid({
+                dataSource: {
+                    remote: {
+                        read: {
+                            url: "/comunidad/112/propietarios/json/",
+                            dataType: "json",
+                            operations: ["sort", "skip", "take"],
+                            data: function (params) {
+                                var odataParams = {};
+                                if (params.sort && params.sort.length) {
+                                    odataParams["$orderby"] = window.orderFields[params.sort[0].path].path + (params.sort[0].desc ? " desc" : "");
+                                }
+                                if (params.skip != null) {
+                                    odataParams["$skip"] = params.skip;
+                                }
+                                if (params.take != null) {
+                                    odataParams["$top"] = params.take;
+                                }
+                                return odataParams;
+                            }
+                    }
+        }
+                    
+                    
+                },
+                sorting: {
+                    multiple: true
+                },
+                paging: {
+                    pageSize: 12,
+                    pageLinksCount: 4
+                },
+                selection: {
+                    type: "row",
+                    multiple: true,
+                    toggle: false
+                },
+                columns: [
+                    { field: "id", width: "70px", title: "ID" },
+                    { field: "nombrepropietario1", title: "Nombre" },
+                    { field: "propiedad", title: "Propiedad" },
+                    { field: "telefonopropietario1", title: "Teléfono" },
+                    { field: "movilpropietario1", title: "Móvil" },
+                ]
+            });
+        });
+</script>
+{% endblock %}

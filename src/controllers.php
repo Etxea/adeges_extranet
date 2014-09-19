@@ -41,6 +41,10 @@ $app->get('/login', function (Request $request) use ($app) {
 //$app->mount('/ocupacion', include 'ocupacion.php');
 //$app->mount('/servicios', include 'servicios.php');
 $app->mount('/usuarios', include 'usuarios.php');
+$app->mount('/comunidad', include 'comunidad.php');
+$app->mount('/informes', include 'informes.php');
+$app->mount('/avisos', include 'avisos.php');
+
 
 $app->error(function (\Exception $e, $code) use ($app) {
     if ($app['debug']) {

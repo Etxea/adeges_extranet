@@ -6,18 +6,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %} {%endblock%}</title>
 
-    <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css" />
-    <link rel="stylesheet" type="text/css" href="font-awesome/css/font-awesome.min.css" />
-    <link rel="stylesheet" type="text/css" href="css/local.css" />
+    <link rel="stylesheet" type="text/css" href="/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="/font-awesome/css/font-awesome.min.css" />
+    <link rel="stylesheet" type="text/css" href="/css/local.css" />
 
-    <script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
-    <script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/js/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="/bootstrap/js/bootstrap.min.js"></script>
 
     <!-- you need to include the shieldui css and js assets in order for the charts to work -->
-    <link rel="stylesheet" type="text/css" href="http://www.shieldui.com/shared/components/latest/css/shieldui-all.min.css" />
-    <link rel="stylesheet" type="text/css" href="http://www.shieldui.com/shared/components/latest/css/light-bootstrap/all.min.css" />
-    <script type="text/javascript" src="http://www.shieldui.com/shared/components/latest/js/shieldui-all.min.js"></script>
-    <script type="text/javascript" src="http://www.prepbootstrap.com/Content/js/gridData.js"></script>
+    <link rel="stylesheet" type="text/css" href="/shieldui/css/shieldui-all.min.css" />
+    <link rel="stylesheet" type="text/css" href="/shieldui/css/light-bootstrap/all.min.css" />
+    <script type="text/javascript" src="/shieldui/js/shieldui-all.min.js"></script>
+    
 </head>
 
 <body>
@@ -29,15 +29,8 @@
         <!-- /#page-wrapper -->
     </div>
     <!-- /#wrapper -->
-
-    <!--
-        This section initializes the chart widgets and a grid component, 
-        which visualize records and allow sorting and paging. 
-        For more information visit: 
-        http://www.shieldui.com/documentation/javascript.chart/getting.started
-        http://www.shieldui.com/documentation/grid/javascript/getting.started
-        http://www.shieldui.com/documentation/datasource/javascript/getting.started
-    -->
+    {% block extra_scripts %} {%endblock%}
+    
     
 </body>
 </html>
