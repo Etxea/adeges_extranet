@@ -19,45 +19,50 @@
                             <h3 class="panel-title"><i class="fa fa-clock-o"></i> Datos Generales</h3>
                         </div>
                         <div class="panel-body">
-                            <table>
-                                <tr>
-                                    <td>ID</td><td>{{ comunidad.id }}</td>
-                                </tr>
-                                <tr>
-                                    <td>Código</td><td>{{ comunidad.codigo }}</td>
-                                </tr>
-                                <tr>
-                                    <td>Nombre</td><td>{{ comunidad.nombrecp }}</td>
-                                </tr>
-                                <tr>
-                                    <td>Vía</td><td>{{ comunidad.via }}</td>
-                                </tr>
-                                <tr>
-                                    <td>Nombre Vía</td><td>{{ comunidad.nombrevia }}</td>
-                                </tr>
-                                <tr>
-                                    <td>Numero</td><td>{{ comunidad.numero }}</td>
-                                </tr>
-                                <tr>
-                                    <td>CP</td><td>{{ comunidad.cp }}</td>
-                                </tr>
-                                <tr>
-                                    <td>Municipio</td><td>{{ comunidad.municipio }}</td>
-                                </tr>
-                                <tr>
-                                    <td>provincia</td><td>{{ comunidad.provincia }}</td>
-                                </tr>
-                                <tr>
-                                    <td>usuario</td><td>{{ comunidad.usuario }}</td>
-                                </tr>
-                                <tr>
-                                    <td>pass</td><td>{{ comunidad.pass }}</td>
-                                </tr>
+                            <table class="table">
+                                <tr><td>ID</td><td>{{ comunidad.id }}</td></tr>
+                                <tr><td>Código</td><td>{{ comunidad.codigo }}</td></tr>
+                                <tr><td>Nombre</td><td>{{ comunidad.nombrecp }}</td></tr>
+                                <tr><td>Vía</td><td>{{ comunidad.via }}</td></tr>
+                                <tr><td>Nombre Vía</td><td>{{ comunidad.nombrevia }}</td></tr>
+                                <tr><td>Numero</td><td>{{ comunidad.numero }}</td></tr>
+                                <tr><td>CP</td><td>{{ comunidad.cp }}</td></tr>
+                                <tr><td>Municipio</td><td>{{ comunidad.municipio }}</td></tr>
+                                <tr><td>provincia</td><td>{{ comunidad.provincia }}</td></tr>
+                                <tr><td>usuario</td><td>{{ comunidad.usuario }}</td></tr>
+                                <tr><td>pass</td><td>{{ comunidad.pass }}</td></tr>
                             </table>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-9">
+                
+                <div class="col-lg-3">
+                    <div class="panel panel-primary">
+                        <div class="panel-heading">
+                            <h3 class="panel-title"><i class="fa fa-clock-o"></i> Seguro</h3>
+                        </div>
+                        <div class="panel-body">
+                            <table class="table">
+                                <tr><td>ID</td><td>{{ comunidad.idseguro }}</td></tr>
+                                <tr><td>Tipo</td><td>{{ comunidad.tiposeguro }}</td></tr>
+                                <tr><td>Corredor</td><td>{{ comunidad.corredor }}</td></tr>
+                                <tr><td>Telf. Corredor</td><td>{{ comunidad.telefonocorredor }}</td></tr>
+                                <tr><td>Fax Corredor</td><td>{{ comunidad.faxcorredor }}</td></tr>
+                                <tr><td>Email Corredor</td><td>{{ comunidad.mailcorredor }}</td></tr>
+                                <tr><td>Movil Corredor</td><td>{{ comunidad.movilcorredor }}</td></tr>
+                                <tr><td>Comentarios</td><td>{{ comunidad.comentarioscorredor }}</td></tr>
+                                <tr><td>Poliza</td><td>{{ comunidad.poliza }}</td></tr>
+                                <tr><td>Franquicia</td><td>{{ comunidad.franquicia }}</td></tr>
+                                <tr><td>Polizaseguro</td><td>{{ comunidad.polizaseguro }}</td></tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                
+                
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
                     <div class="panel panel-primary">
                         <div class="panel-heading">
                             <h3 class="panel-title"><i class="fa fa-bar-chart-o"></i> Propietarios</h3>
