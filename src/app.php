@@ -78,7 +78,7 @@ $app->register(new FormServiceProvider());
 
 
 
-$app->register(new Silex\Provider\SecurityServiceProvider());
+//$app->register(new Silex\Provider\SecurityServiceProvider());
 $app->register(new SessionServiceProvider());
 
 $app['security.firewalls'] = array(
