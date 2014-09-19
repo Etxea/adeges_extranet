@@ -17,7 +17,7 @@ $app->get('/', function () use ($app) {
 ->bind('homepage')
 ;
 
-$app->get('/logout/', function () use ($app) {
+$app->get('/logout', function () use ($app) {
     $app['session']->clear();
     return $app->redirect( $app['url_generator']->generate( 'homepage' ) );
 })

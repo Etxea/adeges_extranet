@@ -6,32 +6,32 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="/">Adges Extranet</a>
+                <a class="navbar-brand" href="{{ app.request.basepath }}">Adges Extranet</a>
             </div>
             <div class="collapse navbar-collapse navbar-ex1-collapse">
                 <ul class="nav navbar-nav side-nav">
                     <!-- <li class="active" ><a href="/"><i class="fa fa-bullseye"></i> Escritorio</a></li> -->
                     <li class="dropdown">
-                        <a href="/" class="dropdown-toggle" data-toggle="dropdown" ><i class="fa fa-bullseye"></i> Comunidad </a>
+                        <a href="{{ app.request.basepath }}/" class="dropdown-toggle" data-toggle="dropdown" ><i class="fa fa-bullseye"></i> Comunidad </a>
                         <ul class="dropdown-menu" >
-                            <li><a href="/comunidad/"><i class="fa fa-book"></i>Datos Generales</a></li>
-                            <li><a href="/comunidad/seguros/"><i class="fa fa-fire-extinguisher"></i>Seguros</a></li>
-                            <li><a href="/comunidad/lonjas/"><i class="fa fa-suitcase"></i>Lonjas</a></li>
-                            <li><a href="/comunidad/convocatorias/"><i class="fa fa-envelope"></i>Convocatorias</a></li>
-                            <li><a href="/comunidad/acuerdos/"><i class="fa fa-bullseye"></i>Acuerdos</a></li>
-                            <li><a href="/comunidad/proveedores/"><i class="fa fa-plug"></i> Proveedores </a></li>
-                            <li><a href="/comunidad/cargos/"><i class="fa fa-calendar"></i> Renovación de Cargos </a></li>
+                            <li><a href="{{ app.request.basepath }}/comunidad/"><i class="fa fa-book"></i>Datos Generales</a></li>
+                            <li><a href="{{ app.request.basepath }}/comunidad/seguros/"><i class="fa fa-fire-extinguisher"></i>Seguros</a></li>
+                            <li><a href="{{ app.request.basepath }}/comunidad/lonjas/"><i class="fa fa-suitcase"></i>Lonjas</a></li>
+                            <li><a href="{{ app.request.basepath }}/comunidad/convocatorias/"><i class="fa fa-envelope"></i>Convocatorias</a></li>
+                            <li><a href="{{ app.request.basepath }}/comunidad/acuerdos/"><i class="fa fa-bullseye"></i>Acuerdos</a></li>
+                            <li><a href="{{ app.request.basepath }}/comunidad/proveedores/"><i class="fa fa-plug"></i> Proveedores </a></li>
+                            <li><a href="{{ app.request.basepath }}/comunidad/cargos/"><i class="fa fa-calendar"></i> Renovación de Cargos </a></li>
                             
                         </ul>
                     </li>
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-print"></i> Informes </a>
                         <ul class="dropdown-menu" >
-                            <li><a href="/informes/actas/"><i class="fa fa-file-text"></i> Actas</a></li>
-                            <li><a href="/informes/morosidades/"><i class="fa fa-eur"></i> Morosidades</a></li>
+                            <li><a href="{{ app.request.basepath }}/informes/actas/"><i class="fa fa-file-text"></i> Actas</a></li>
+                            <li><a href="{{ app.request.basepath }}/informes/morosidades/"><i class="fa fa-eur"></i> Morosidades</a></li>
                         </ul>
                     </li>
-                    <li><a href="/avisos/"><i class="fa fa-bell"></i> Avisos <span class="badge">0</span></a></li>            
+                    <li><a href="{{ app.request.basepath }}/avisos/"><i class="fa fa-bell"></i> Avisos <span class="badge">0</span></a></li>            
                     <li><a href="#"><i class="fa fa-wrench"></i> Datos de contacto</a></li>            
                     
                     
@@ -39,6 +39,7 @@
                     
                     
                 </ul>
+		{% if app.security.token.user is defined %}
                 <ul class="nav navbar-nav navbar-right navbar-user">
                     <li class="dropdown messages-dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-envelope"></i> Mensajes <span class="badge">2</span> <b class="caret"></b></a>
@@ -62,14 +63,15 @@
                         </ul>
                     </li>
                     <li class="dropdown user-dropdown">
-                       <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> Steve Miller<b class="caret"></b></a>
+                       <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> Comunidad 112<b class="caret"></b></a>
                        <ul class="dropdown-menu">
                            <li><a href="#"><i class="fa fa-user"></i> Profile</a></li>
                            <li><a href="#"><i class="fa fa-gear"></i> Settings</a></li>
                            <li class="divider"></li>
-                           <li><a href="#"><i class="fa fa-power-off"></i> Log Out</a></li>
+                           <li><a href="{{ app.request.basepath }}/logout"><i class="fa fa-power-off"></i> Log Out</a></li>
                        </ul>
                    </li>
                 </ul>
+		{% endif %}
             </div>
         </nav>

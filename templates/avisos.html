@@ -32,7 +32,7 @@
                 dataSource: {
                     remote: {
                         read: {
-                            url: "/avisos/112/json/",
+                            url: "{{ app.request.basepath }}/avisos/112/json/",
                             dataType: "json",
                             operations: ["sort", "skip", "take"],
                             data: function (params) {

@@ -13,7 +13,7 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-lg-3">
+                <div class="col-lg-6">
                     <div class="panel panel-primary">
                         <div class="panel-heading">
                             <h3 class="panel-title"><i class="fa fa-clock-o"></i> Datos Generales</h3>
@@ -36,7 +36,7 @@
                     </div>
                 </div>
                 
-                <div class="col-lg-3">
+                <div class="col-lg-6">
                     <div class="panel panel-primary">
                         <div class="panel-heading">
                             <h3 class="panel-title"><i class="fa fa-clock-o"></i> Seguro</h3>
@@ -86,7 +86,7 @@
                 dataSource: {
                     remote: {
                         read: {
-                            url: "/comunidad/112/propietarios/json/",
+                            url: "{{ app.request.basepath }}/comunidad/112/propietarios/json/",
                             dataType: "json",
                             operations: ["sort", "skip", "take"],
                             data: function (params) {

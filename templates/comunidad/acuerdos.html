@@ -27,7 +27,7 @@
                 dataSource: {
                     remote: {
                         read: {
-                            url: "/comunidad/112/acuerdos/json/",
+                            url: "{{ app.request.basepath }}/comunidad/112/acuerdos/json/",
                             dataType: "json",
                             operations: ["sort", "skip", "take"],
                             data: function (params) {
